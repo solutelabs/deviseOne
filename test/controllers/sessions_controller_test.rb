@@ -16,7 +16,7 @@ class SessionsControllerTest < ActionController::TestCase
         email: "wrong@email.com",
         password: "wrongpassword"
       }
-      assert_equal 200, @response.status
+      assert_equal 302, @response.status
     ensure
       ActiveSupport::Notifications.unsubscribe(subscriber)
     end
@@ -65,8 +65,7 @@ class SessionsControllerTest < ActionController::TestCase
       email: "nosuchuser@example.com",
       password: "wevdude"
     }
-    assert_equal 200, @response.status
-    assert_template "devise/sessions/new"
+    assert_equal 302, @response.status
   end
 
   test "#destroy doesn't set the flash if the requested format is not navigational" do

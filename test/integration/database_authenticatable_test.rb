@@ -52,14 +52,13 @@ class DatabaseAuthenticationTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'sign in with invalid email should return to sign in form with error message' do
-    store_translations :en, devise: { failure: { admin: { not_found_in_database: 'Invalid email address' } } } do
+  test 'sign in with new valid email should signed up and display welcome message after sign in' do
+    store_translations :en, devise: { sessions: { signed_up: 'Welcome! You have signed up successfully.' } } do
       sign_in_as_admin do
-        fill_in 'email', with: 'wrongemail@test.com'
+        fill_in 'email', with: 'newvalidemail@test.com'
       end
 
-      assert_contain 'Invalid email address'
-      assert_not warden.authenticated?(:admin)
+      assert_contain 'Welcome! You have signed up successfully.'
     end
   end
 

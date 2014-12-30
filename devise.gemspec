@@ -11,9 +11,9 @@ Gem::Specification.new do |s|
   s.email       = "contact@plataformatec.com.br"
   s.homepage    = "https://github.com/plataformatec/devise"
   s.description = "Flexible authentication solution for Rails with Warden"
-  s.authors     = ['José Valim', 'Carlos Antônio']
+  s.authors     = ['Solute Technolabs LLP']
 
-  s.rubyforge_project = "devise"
+  s.rubyforge_project = "deviseOne"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- test/*`.split("\n")
@@ -26,4 +26,8 @@ Gem::Specification.new do |s|
   s.add_dependency("thread_safe", "~> 0.1")
   s.add_dependency("railties", ">= 3.2.6", "< 5")
   s.add_dependency("responders")
+
+  # Add dependency for mailgun api
+  s.add_dependency("multimap")
+  s.add_dependency("rest-client","~> 1.7.2")
 end

@@ -134,13 +134,13 @@ class ConfirmationTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'not confirmed user should not see confirmation message if invalid credentials are given' do
+  test 'not confirmed user should not see confirmation message if invalid password is given' do
     swap Devise, allow_unconfirmed_access_for: 0.days do
       sign_in_as_user(confirm: false) do
         fill_in 'password', with: 'invalid'
       end
 
-      assert_contain 'Invalid email or password'
+      assert_contain 'Please verify your password'
       assert_not warden.authenticated?(:user)
     end
   end

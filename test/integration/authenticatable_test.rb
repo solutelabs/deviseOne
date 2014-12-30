@@ -578,9 +578,11 @@ end
 
 class AuthenticationKeysTest < ActionDispatch::IntegrationTest
   test 'missing authentication keys cause authentication to abort' do
-    swap Devise, authentication_keys: [:subdomain] do
-      sign_in_as_user
-      assert_contain "Invalid subdomain or password."
+    swap Devise, authentication_keys: { email: true, subdomain: true }  do
+      sign_in_as_user do
+        fill_in 'email', with: 'user@test.com'
+      end
+      assert_contain "Invalid email, subdomain or password."
       assert_not warden.authenticated?(:user)
     end
   end
