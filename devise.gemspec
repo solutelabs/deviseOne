@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = "contact@plataformatec.com.br"
   s.homepage    = "https://github.com/plataformatec/devise"
   s.description = "Flexible authentication solution for Rails with Warden"
-  s.authors     = ['Solute Technolabs LLP']
+  s.authors     = ['Solute Technolabs LLP', 'Sachin Gevariya']
 
   s.rubyforge_project = "deviseOne"
 
