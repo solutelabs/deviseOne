@@ -3,14 +3,14 @@ $:.push File.expand_path("../lib", __FILE__)
 require "devise/version"
 
 Gem::Specification.new do |s|
-  s.name        = "devise"
+  s.name        = "deviseOne"
   s.version     = Devise::VERSION.dup
   s.platform    = Gem::Platform::RUBY
   s.licenses    = ["MIT"]
   s.summary     = "Flexible authentication solution for Rails with Warden"
-  s.email       = "contact@plataformatec.com.br"
-  s.homepage    = "https://github.com/plataformatec/devise"
-  s.description = "Flexible authentication solution for Rails with Warden"
+  s.email       = "rubydev@solutelabs.com"
+  s.homepage    = "https://github.com/solutelabs/deviseOne"
+  s.description = "Flexible Login/signup with single view"
   s.authors     = ['Solute Technolabs LLP', 'Sachin Gevariya']
 
   s.rubyforge_project = "deviseOne"
